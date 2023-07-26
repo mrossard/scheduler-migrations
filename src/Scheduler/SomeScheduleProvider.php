@@ -27,7 +27,7 @@ class SomeScheduleProvider implements ScheduleProviderInterface
         ]);
 
         return (new Schedule())->add(
-            RecurringMessage::every(frequency: $frequency,
+            RecurringMessage::every(frequency: $frequency->getValue(),
                                     message  : new SomeMessage(),
                                     from     : $this->now())
         );
